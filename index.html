@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page 3000</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section>
+        <div class="circle"></div>
+        <header>
+            <a href="#"><img src="images/logo.png" class="logo"></a>
+            <div class="toggle" onclick="toggleMenu();"></div>
+            <ul class="navigation">
+                <li><a href="">Home</a></li>
+                <li><a href="">Opções</a></li>
+                <li><a href="">Recursos</a></li>
+                <li><a href="">Contato</a></li>
+            </ul>
+        </header>
+        <div class="content">
+            <div class="textBox">
+                <h2>Não é travesseiro <br>É <span>SonhoZen</span></h2>
+                <h3>Sua nova melhor escolha</h3>
+                <p> O "SonhoZen" é mais que um simples travesseiro; é seu companheiro de sono ideal. Com tecnologia
+                    integrada de áudio e vibração, oferece massagens relaxantes para aliviar o estresse do dia,
+                    histórias envolventes para acalmar a mente e melodias suaves para induzir um sono tranquilo.
+                    Solucionando a dificuldade de adormecer e proporcionando uma experiência completa de relaxamento, o
+                    "SonhoZen" promete noites de sono revigorantes para todos os clientes.</p>
+                <a id="openModalBtn"> Compre agora</a>
+
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                      <span class="close">&times;</span>
+                      <p>Por favor, insira seu nome e email:</p>
+                      <input type="text" id="nameInput" placeholder="Seu nome">
+                      <input type="email" id="emailInput" placeholder="Seu email">
+                      <button id="sendButton">Enviar</button>
+                    </div>
+                  </div>
+            </div>
+            <div class="imgBox">
+                <img src="images/tr1.png" class="produto">
+            </div>
+        </div>
+        <ul class="thumb">
+            <li><img src="images/tr1.png" onclick="imgSlider('images/tr1.png');changeCircleColor('#489286')"></li>
+            <li><img src="images/tr2.png" onclick="imgSlider('images/tr2.png');changeCircleColor('#fab3c5')"></li>
+            <li><img src="images/tr3.png" onclick="imgSlider('images/tr3.png');changeCircleColor('#6faca4')"></li>
+        </ul>
+        <ul class="sci">
+            <li><a href="#"><img src="images/facebook.png"></a></li>
+            <li><a href="#"><img src="images/twitter.png"></a></li>
+            <li><a href="#"><img src="images/instagram.png"></a></li>
+        </ul>
+    </section>
+
+    <script type="text/javascript">
+        function imgSlider(anything) {
+            document.querySelector('.produto').src = anything;
+        }
+
+        function changeCircleColor(color) {
+            const circle = document.querySelector('.circle');
+            circle.style.backgroundColor = color;
+        }
+
+        function toggleMenu() {
+            var menuToggle = document.querySelector('.toggle');
+            var navigation = document.querySelector('.navigation')
+            menuToggle.classList.toggle('active')
+            navigation.classList.toggle('active')
+        }
+
+// Modal
+var modal = document.getElementById("myModal");
+
+var btn = document.getElementById("openModalBtn");
+
+var span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+    </script>
+</body>
+
+</html>
